@@ -52,7 +52,28 @@ public class OrderedList<T>
 
   public int compare(T v1, T v2)
     {
-        int var = String.valueOf(v1).trim().compareTo(String.valueOf(v2).trim());
+        int var = 0;
+
+        switch (v1.getClass().getName()) {
+            case "java.lang.Integer":
+                var = Integer.class.cast(v1).compareTo(Integer.class.cast(v2));
+                break;
+            case "java.lang.Long":
+                var = Long.class.cast(v1).compareTo(Long.class.cast(v2));
+                break;
+            case "java.lang.String":
+                var = String.class.cast(v1).trim().compareTo(String.class.cast(v2).trim());
+                break;
+            case "java.lang.Double":
+                var = Double.class.cast(v1).compareTo(Double.class.cast(v2));
+                break;
+            case "java.lang.Float":
+                var = Float.class.cast(v1).compareTo(Float.class.cast(v2));
+                break;
+            case "java.lang.Byte":
+                var = Byte.class.cast(v1).compareTo(Byte.class.cast(v2));
+                break;
+        }
 
         if (var < 0) {
             return -1;
