@@ -195,4 +195,24 @@ public class OrderedList<T>
         }
         return r;
     }
+    
+    public Node<T> getHead() {
+        return head;
+    }
+
+    public void setHead(Node<T> head) {
+        this.head = head;
+    }
+
+    public Node<T> getTail() {
+        return tail;
+    }
+
+    public void setTail(Node<T> tail) {
+        this.tail = tail;
+    }
+
+    public boolean is_ascending() {
+        return _ascending;
+    }
   }
